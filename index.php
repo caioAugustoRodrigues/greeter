@@ -1,3 +1,7 @@
+<?php 
+	$error = isset($_GET['error']) ? $_GET['error'] : 0;
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -34,13 +38,13 @@
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
 	            <li><a href="inscrevase.php">Inscrever-se</a></li>
-	            <li class="">
+	            <li class="<?= $error == 1 ? 'open' : '' ?>">
 	            	<a id="entrar" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar</a>
 					<ul class="dropdown-menu" aria-labelledby="entrar">
 						<div class="col-md-12">
 				    		<p>Você possui uma conta?</h3>
 				    		<br />
-							<form method="post" action="" id="formLogin">
+							<form method="post" action="validate.php" id="formLogin">
 								<div class="form-group">
 									<input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" />
 								</div>
@@ -49,11 +53,18 @@
 									<input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
 								</div>
 								
-								<button type="buttom" class="btn btn-primary" id="btn_login">Entrar</button>
+								<button type="submit" class="btn btn-primary" id="btn_login">Entrar</button>
 
 								<br /><br />
 								
 							</form>
+
+							<?php 
+								if($error == 1) {
+									echo '<p style="color: #ff0000">Usuário ou senha inválidos</p>';
+								}
+							?>
+
 						</form>
 				  	</ul>
 	            </li>
