@@ -1,4 +1,6 @@
 <?php 
+    session_start(); //aways use first
+
     require_once('db.class.php');
 
     $login = $_POST['usuario'];
@@ -13,11 +15,14 @@
 
     $user_data = mysqli_fetch_array($id_result);
    
-    if($id_result) {
+    if ($id_result) {
         $user_data;
 
-        if(isset($user_data['user'])) {
-            echo 'usuário existe';
+        if (isset($user_data['user'])) {
+            $_SESSION['user'] = $user_data['user'];
+            $_SESSION['email'] = $user_data['email'];
+
+            header('Location: home.php');
         } else {
             header('Location: index.php?error=1');
         }

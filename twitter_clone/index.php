@@ -1,6 +1,9 @@
-<?php 
-	$error = isset($_GET['error']) ? $_GET['error'] : 0;
+<?php
+
+	$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+
 ?>
+
 
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -16,7 +19,30 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	
 		<script>
-			// código javascript						
+			$(document).ready( function(){
+
+				//verificar se os campos de usuário e senha foram devidamente preenchidos
+				$('#btn_login').click(function(){
+
+					var campo_vazio = false;
+
+					if($('#campo_usuario').val() == ''){
+						$('#campo_usuario').css({'border-color': '#A94442'});
+						campo_vazio = true;
+					} else {
+						$('#campo_usuario').css({'border-color': '#CCC'});
+					}
+
+					if($('#campo_senha').val() == ''){
+						$('#campo_senha').css({'border-color': '#A94442'});
+						campo_vazio = true;
+					} else {
+						$('#campo_senha').css({'border-color': '#CCC'});
+					}
+
+					if(campo_vazio) return false;
+				});
+			});					
 		</script>
 	</head>
 
@@ -38,13 +64,13 @@
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
 	            <li><a href="inscrevase.php">Inscrever-se</a></li>
-	            <li class="<?= $error == 1 ? 'open' : '' ?>">
+	            <li class="<?= $erro == 1 ? 'open' : '' ?>">
 	            	<a id="entrar" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar</a>
 					<ul class="dropdown-menu" aria-labelledby="entrar">
 						<div class="col-md-12">
 				    		<p>Você possui uma conta?</h3>
 				    		<br />
-							<form method="post" action="validate.php" id="formLogin">
+							<form method="post" action="validar_acesso.php" id="formLogin">
 								<div class="form-group">
 									<input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="Usuário" />
 								</div>
@@ -53,15 +79,15 @@
 									<input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Senha" />
 								</div>
 								
-								<button type="submit" class="btn btn-primary" id="btn_login">Entrar</button>
+								<button type="buttom" class="btn btn-primary" id="btn_login">Entrar</button>
 
 								<br /><br />
 								
 							</form>
 
-							<?php 
-								if($error == 1) {
-									echo '<p style="color: #ff0000">Usuário ou senha inválidos</p>';
+							<?php
+								if($erro == 1){
+									echo '<font color="#FF0000">Usuário e ou senha inválido(s)</font>';
 								}
 							?>
 
@@ -89,28 +115,6 @@
 	    </div>
 	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script>
-		$(document).ready( function() {
-			$('#btn_login').click(function() {
-				var empty_field = false;
-
-				if ($('#campo_usuario').val() == '') {
-					$('#campo_usuario').css({'border-color': '#A94442'});
-					empty_field = true;
-				} else {
-					$('#campo_usuario').css({'border-color': '#CCC'});
-				}
-				
-				if ($('#campo_senha').val() == '') {
-					$('#campo_senha').css({'border-color': '#A94442'});
-					empty_field = true;
-				} else {
-					$('#campo_senha').css({'border-color': '#CCC'});
-				}
-
-				if(empty_field) return false;
-			})
-		})
-		</script>
+	
 	</body>
 </html>
