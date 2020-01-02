@@ -4,7 +4,7 @@
     require_once('db.class.php');
 
     $login = $_POST['usuario'];
-    $password = $_POST['senha'];
+    $password = md5($_POST['senha']);
 
     $sql = " SELECT * FROM users WHERE user = '$login' AND password = '$password' ";
     
