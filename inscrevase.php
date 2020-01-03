@@ -1,3 +1,8 @@
+<?php 
+	$user_error = isset($_GET['user_error']) ? $_GET['user_error'] : 0;
+	$email_error = isset($_GET['email_error']) ? $_GET['email_error'] : 0;
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -10,7 +15,7 @@
 
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	
+		<link rel="stylesheet" href="main.css">
 	</head>
 
 	<body>
@@ -48,10 +53,20 @@
 				<form method="post" action="register.php" id="formCadastrarse">
 					<div class="form-group">
 						<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" required="required">
+						<?php 
+							if ($user_error) {
+								echo "<p class='error'>User already registered</p>";
+							}
+						?>
 					</div>
 
 					<div class="form-group">
 						<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required">
+						<?php 
+							if ($email_error) {
+								echo "<p class='error'>E-mail already registered</p>";
+							}
+						?>
 					</div>
 					
 					<div class="form-group">
