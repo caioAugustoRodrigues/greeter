@@ -12,7 +12,7 @@
 	<head>
 		<meta charset="UTF-8">
 
-		<title>Twitter clone</title>
+		<title>Home - Greeter</title>
 		
 		<!-- jquery - link cdn -->
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -47,29 +47,54 @@
 
 
 	    <div class="container">
-	    	
-	    	<br /><br />
-
-	    	<div class="col-md-4"></div>
-	    	<div class="col-md-4">
-	    		<p>usuario autenticado</p>
-                <?= $_SESSION['user'] ?>
-                <?= $_SESSION['email'] ?>
+	    	<div class="col-xs-3">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h4>
+							<?= $_SESSION['user'] ?>
+						</h4>
+						<hr />
+						<div class="col-xs-6">
+						GREETS <br> 1
+						</div>
+						<div class="col-xs-6">
+						FOLLOWERS <br> 1
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-4"></div>
 
-			<div class="clearfix"></div>
-			<br />
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
+	    	<div class="col-xs-6">
+	    		<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="input-group">
+							<input type="text" name="greet_text" id="text_greet" placeholder="What is on your mind?" maxlength="140" class="form-control">
+							<span class="input-group-btn" >
+								<button class="btn btn-default" id="btn_greet">
+								Greet!
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
 
+			<div class="col-xs-3">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h4>
+							<a href="#">
+								Look for People
+							</a>
+						</h4>
+					</div>
+				</div>
+			</div>
 		</div>
 
 
 	    </div>
 	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	
-	</body>
+		<script src="home.js"></script>
 </html>

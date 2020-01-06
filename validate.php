@@ -19,6 +19,7 @@
         $user_data;
 
         if (isset($user_data['user'])) {
+            $_SESSION['user_id'] = $user_data['id'];
             $_SESSION['user'] = $user_data['user'];
             $_SESSION['email'] = $user_data['email'];
 

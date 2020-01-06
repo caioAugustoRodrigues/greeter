@@ -1,7 +1,8 @@
-# Twitter Clone v1.0.0
+# Greeter v1.0.0
 
-## Simple twitter clone on PHP
-A project based on Jamilton Damasceno and Jorge Sant Ana's "Curso completo de Desenvolvimento Web" - 2017, and it's final project: Twitter Clone.
+## A simpler social network for simpler times
+A project based on Jamilton Damasceno and Jorge Sant Ana's "Curso completo de Desenvolvimento Web" - 2017.
+No ads, no monitoring what you're talking near your phone.
 
 ## Technologies Used
 * Bootstrap(v3.3.6);
