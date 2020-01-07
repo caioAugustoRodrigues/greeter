@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require('../../functions/validate-session.php');
+    require('../validate-session.php');
     validateSession();
 
     require_once('../../db.class.php');

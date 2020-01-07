@@ -1,6 +1,6 @@
 <?php 
     session_start();
-	require('functions/validate-session.php');
+	require('../../functions/validate-session.php');
 	validateSession();
 ?>
 
@@ -36,7 +36,8 @@
 	        
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="exit.php">Sair</a></li>
+	            <li><a href="../home.php">Home</a></li>
+	            <li><a href="exit.php">Exit</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -64,11 +65,11 @@
 	    	<div class="col-xs-6">
 	    		<div class="panel panel-default">
 					<div class="panel-body">
-						<form onsubmit="return false" id="greet_input" class="input-group" method="POST">
-							<input type="text" name="greet_text" id="text_greet" placeholder="What is on your mind?" maxlength="140" class="form-control">
+						<form id="search_people" class="input-group" method="POST">
+							<input type="text" name="person_name" id="person_name" placeholder="Who are you looking for?" maxlength="140" class="form-control">
 							<span class="input-group-btn" >
-								<span class="btn btn-default" id="btn_greet">
-								Greet!
+								<span class="btn btn-default" id="btn_search">
+                                    Search
 								</span>
 							</span>
 						</form>
@@ -83,11 +84,7 @@
 			<div class="col-xs-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h4>
-							<a href="pages/search/index.php">
-								Look for People
-							</a>
-						</h4>
+						
 					</div>
 				</div>
 			</div>
@@ -96,7 +93,6 @@
 
 	    </div>
 	
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script src="home.js"></script>
-		<script src="js/refresh_greet.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="../../js/search.js"></script>
 </html>
