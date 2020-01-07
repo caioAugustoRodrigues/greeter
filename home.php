@@ -36,7 +36,7 @@
 	        
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="exit.php">Sair</a></li>
+	            <li><a href="functions/exit">Sair</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -84,7 +84,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h4>
-							<a href="pages/search/index.php">
+							<a href="pages/search/">
 								Look for People
 							</a>
 						</h4>

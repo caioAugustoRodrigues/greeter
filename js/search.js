@@ -1,18 +1,18 @@
 const button = document.getElementById('btn_search');
 const searchInput = document.getElementById('person_name');
+const searchForm = document.getElementById('search_people');
 
 function handleSearch() {
-    const searchContent = greet.value;
+    const searchContent = searchInput.value;
 
     if (searchContent != '') {
         $.ajax({    //jQuery here
-            url: 'pages/send-greet/index.php',
-            data: { search_text: searchContent },
+            url: '../../functions/get_person/index.php',
             method: "POST",
             type: "POST",
+            data: { search_text: searchContent },
             success: function(data) {
-                let search_text = searchContent;
-                searchContent = '';
+                alert(data);
             }
         })          // end of jQuery
     }

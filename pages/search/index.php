@@ -36,8 +36,8 @@
 	        
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="../home.php">Home</a></li>
-	            <li><a href="exit.php">Exit</a></li>
+	            <li><a href="../../home.php">Home</a></li>
+	            <li><a href="../../functions/exit">Exit</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>

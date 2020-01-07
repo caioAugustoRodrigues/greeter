@@ -11,7 +11,7 @@
         private $pass = '';
 
         //banco de dados
-        private $database = 'db_twitter';
+        private $database = 'db_greeter';
 
         public function connect_mysql() {
             //cria conexão

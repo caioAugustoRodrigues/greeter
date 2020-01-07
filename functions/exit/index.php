@@ -3,5 +3,5 @@
 
     unset($_SESSION['user']);
     unset($_SESSION['email']);
-    header('Location: index.php?exit');
+    header('Location: ../../index.php?exit');
 ?>
