@@ -1,10 +1,7 @@
 <?php 
     session_start();
-
-    if ( !isset($_SESSION['user']) ) {
-        header('Location: index.php?error=1');
-    }
-
+	require('functions/validate-session.php');
+	validateSession();
 ?>
 
 <!DOCTYPE HTML>
@@ -67,14 +64,14 @@
 	    	<div class="col-xs-6">
 	    		<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="input-group">
+						<form class="input-group" method="POST">
 							<input type="text" name="greet_text" id="text_greet" placeholder="What is on your mind?" maxlength="140" class="form-control">
 							<span class="input-group-btn" >
-								<button class="btn btn-default" id="btn_greet">
+								<button type="submit" class="btn btn-default" id="btn_greet">
 								Greet!
 								</button>
 							</span>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>

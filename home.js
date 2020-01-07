@@ -7,10 +7,13 @@ function handleGreet() {
     if (greetContent != '') {
         $.ajax({    //jQuery here
             url: 'pages/send-greet/index.php',
-            method: 'post',
             data: { greet_text: greetContent },
+            method: "POST",
+            type: "POST",
             success: function(data) {
-                alert('Greet');
+                let greetText = greetContent;
+                greetText = '';
+                alert('foi')
             }
         })          // end of jQuery
     }
