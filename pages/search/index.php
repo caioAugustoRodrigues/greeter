@@ -45,30 +45,30 @@
 
 
 	    <div class="container">
-	    	<div class="col-xs-3">
+	    	<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h4>
 							<?= $_SESSION['user'] ?>
 						</h4>
 						<hr />
-						<div class="col-xs-6">
+						<div class="col-md-6">
 						GREETS <br> 1
 						</div>
-						<div class="col-xs-6">
+						<div class="col-md-6">
 						FOLLOWERS <br> 1
 						</div>
 					</div>
 				</div>
 			</div>
 
-	    	<div class="col-xs-6">
+	    	<div class="col-md-6">
 	    		<div class="panel panel-default">
 					<div class="panel-body">
-						<form id="search_people" name="search_people" class="input-group" method="POST">
-							<input type="text" method="POST" name="person" id="person" placeholder="Who are you looking for?" maxlength="140" class="form-control">
+						<form onsubmit="return false" id="search_form" name="search_people" class="input-group" method="POST">
+							<input type="text" name="person" id="person" placeholder="Who are you looking for?" maxlength="140" class="form-control">
 							<span class="input-group-btn" >
-								<span class="btn btn-default" id="btn_search">
+								<span type="submit" class="btn btn-default" id="btn_search">
                                     Search
 								</span>
 							</span>
@@ -76,12 +76,12 @@
 					</div>
 				</div>
 
-				<div id="greets" class="list-group">
+				<div id="search_results" class="list-group">
 				
 				</div>
 			</div>
 
-			<div class="col-xs-3">
+			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						
