@@ -65,8 +65,8 @@
 	    	<div class="col-xs-6">
 	    		<div class="panel panel-default">
 					<div class="panel-body">
-						<form id="search_people" class="input-group" method="POST">
-							<input type="text" name="person_name" id="person_name" placeholder="Who are you looking for?" maxlength="140" class="form-control">
+						<form id="search_people" name="search_people" class="input-group" method="POST">
+							<input type="text" method="POST" name="person" id="person" placeholder="Who are you looking for?" maxlength="140" class="form-control">
 							<span class="input-group-btn" >
 								<span class="btn btn-default" id="btn_search">
                                     Search

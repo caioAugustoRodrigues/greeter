@@ -1,16 +1,15 @@
 const button = document.getElementById('btn_search');
-const searchInput = document.getElementById('person_name');
-const searchForm = document.getElementById('search_people');
+const searchInput = document.getElementById('person');
 
 function handleSearch() {
-    const searchContent = searchInput.value;
+    const searchUser = searchInput.value;
 
-    if (searchContent != '') {
+    if (searchInput.value != '') {
         $.ajax({    //jQuery here
             url: '../../functions/get_person/index.php',
             method: "POST",
             type: "POST",
-            data: { search_text: searchContent },
+            data: { person: searchUser },
             success: function(data) {
                 alert(data);
             }
