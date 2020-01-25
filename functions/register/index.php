@@ -1,5 +1,5 @@
 <?php 
-    require_once('db.class.php');
+    require_once('../../db.class.php');
 
     $user = $_POST['usuario'];
     $email = $_POST['email'];
@@ -48,7 +48,7 @@
             $return_get.= "email_error=1&";
         }
 
-        header('Location: inscrevase.php?'.$return_get);
+        header('Location: ../../pages/sign-up/index.php?'.$return_get);
         die();
     }
 
@@ -57,7 +57,7 @@
 
     //executar a query
     if ( mysqli_query($link, $sql) ) {
-        echo 'Usuario Registrado com Sucesso';
+        header('Location: ../../index.php'.$return_get);
     } else {
         echo 'Erro!';
     }; //first parameter: conection, second parameter: query

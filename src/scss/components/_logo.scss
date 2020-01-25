@@ -1,0 +1,10 @@
+.logo {
+    padding: 0.5rem;
+
+    &__content {
+        display: block;
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+    }
+}

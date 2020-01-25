@@ -17,26 +17,29 @@ function handleSearch() {
                 
                 $('.btn_follow').click( function() {
                     const searchedId = $(this).data('searched_id');
+
                     
                     $.ajax({
                         url: '../../functions/follow/index.php',
                         data: { user_to_follow_id: searchedId },
                         method: 'POST',
                         success: function(data) {
-                            alert('Followed');
+                            $('#btn_follow' + searchedId).hide();
+                            $('#btn_unfollow' + searchedId).show();
                         }
                     })
                 })
                 
                 $('.btn_unfollow').click( function() {
                     const searchedId = $(this).data('searched_id');
-
+                    
                     $.ajax({
                         url: '../../functions/unfollow/index.php',
                         data: { user_to_unfollow_id: searchedId },
                         method: 'POST',
                         success: function(data) {
-                            alert('Unfollowed');
+                            $('#btn_follow' + searchedId).show();
+                            $('#btn_unfollow' + searchedId).hide();
                         }
                     })
                 })

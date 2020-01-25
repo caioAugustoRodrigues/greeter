@@ -2,6 +2,39 @@
     session_start();
 	require('../../functions/validate-session.php');
 	validateSession();
+
+	require_once('../../db.class.php');
+
+	$objDb = new db();
+    $link = $objDb->connect_mysql();
+
+	$user_id = $_SESSION['user_id'];
+
+	//how many greets
+	$sql = "SELECT COUNT(*) as qnt_greets FROM greets where id_user = $user_id";
+	$result_id = mysqli_query($link, $sql);
+
+	$qnt_greets = 0;
+
+	if ($result_id) {
+		$register = mysqli_fetch_array($result_id, MYSQLI_ASSOC);
+		$qnt_greets = $register['qnt_greets'];
+	} else {
+		echo 'Error on fetching user id';
+	}
+	
+	//how many followers
+	$sql = "SELECT COUNT(*) as qnt_followers FROM followers where user_id = $user_id";
+	$result_id = mysqli_query($link, $sql);
+
+	$qnt_followers = 0;
+
+	if ($result_id) {
+		$register = mysqli_fetch_array($result_id, MYSQLI_ASSOC);
+		$qnt_followers = $register['qnt_followers'];
+	} else {
+		echo 'Error on fetching user id';
+	}
 ?>
 
 <!DOCTYPE HTML>
@@ -36,7 +69,7 @@
 	        
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="../../home.php">Home</a></li>
+	            <li><a href="../home/">Home</a></li>
 	            <li><a href="../../functions/exit">Exit</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
@@ -52,11 +85,13 @@
 							<?= $_SESSION['user'] ?>
 						</h4>
 						<hr />
-						<div class="col-md-6">
-						GREETS <br> 1
+						<div class="col-xs-6">
+						<h4>GREETS</h3>
+						<p><?= $qnt_greets ?></p>
 						</div>
-						<div class="col-md-6">
-						FOLLOWERS <br> 1
+						<div class="col-xs-6">
+						<h4>FOLLOWERS</h3>
+						<p><?= $qnt_followers ?></p>
 						</div>
 					</div>
 				</div>
@@ -95,4 +130,6 @@
 	
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="../../js/search.js"></script>
+		<script src="../js/refresh_greet_numbers.js"></script>
+		<script src="../js/refresh_followers.js"></script>
 </html>

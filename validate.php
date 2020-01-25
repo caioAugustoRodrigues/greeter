@@ -23,7 +23,7 @@
             $_SESSION['user'] = $user_data['user'];
             $_SESSION['email'] = $user_data['email'];
 
-            header('Location: home.php');
+            header('Location: pages/home/index.php');
         } else {
             header('Location: index.php?error=1');
         }

@@ -1,0 +1,38 @@
+$primary-color: #188ec7;
+$secondary-color: #32353d;
+$text-color: #f5f5fa;
+
+$font-weight:(
+    "thin": 100,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+    "bolder": 900,
+);
+
+@function weight($weightname){
+    @return map-get($font-weight, $weightname );
+};
+
+@mixin transition-ease {
+    transition: all 0.3s ease-in-out;
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content; 
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1000px) {
+        @content; 
+    }
+}
+
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content; 
+    }
+}
