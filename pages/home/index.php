@@ -111,4 +111,5 @@
 		<script src="../../js/refresh_greet_numbers.js"></script>
 		<script src="../../js/refresh_followers.js"></script>
 		<script src="../../js/refresh_greet.js"></script>
+		<script src="../../js/delete_greet.js"></script>
 </html>

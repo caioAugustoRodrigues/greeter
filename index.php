@@ -14,7 +14,7 @@
 
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	
+	 	<link rel="stylesheet" href="./src/css/main.css">
 		<script>
 			// código javascript						
 		</script>
@@ -32,7 +32,11 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <img src="imagens/icone_twitter.png" />
+	          <div class="logo">
+			  	<a href="index.php">
+				  <img src="img/greeter.png" class="logo__content" />  
+				</a>
+			  </div>
 	        </div>
 	        
 	        <div id="navbar" class="navbar-collapse collapse">

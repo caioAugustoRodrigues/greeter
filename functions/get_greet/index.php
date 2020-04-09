@@ -27,9 +27,15 @@
                 echo '<a href="#" class="list-group-item">';
                 echo '<h4 class="list-group-item-heading">'.$register['user'].'<small> - You - '.$register['date'].'</small></h4>';
                 echo '<p class="list-group-item-text">'.$register['greet'].'</p>';
-                echo '<form action="../../functions/delete_greet/index.php" method="POST" class="delete-form">
-                        <button name="greet" id="btn-delete" class="btn btn-primary" value="quero colocar a id do greet aqui">'.'delete'.'</button>
-                    </form>';
+                echo '
+                    <button 
+                        data-greet="'.$register['id_greet'].'"
+                        id="btn-delete"
+                        onclick="handleDelete()"
+                    >
+                        Delete
+                    </button>
+                ';
                 echo '</a>';
             } else  {
                 echo '<a href="#" class="list-group-item">';
@@ -38,6 +44,8 @@
                 echo '</a>';
             }
         }
+
+        
 
     } else {
         echo 'Request error';

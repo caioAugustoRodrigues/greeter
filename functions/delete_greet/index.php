@@ -6,7 +6,7 @@
     require_once('../../db.class.php');
     
     $user_id = $_SESSION['user_id'];
-    $greet = $_POST['greet'];
+    $greet = $_POST['greet_id'];
 
     if ($user_id == '') {
         die();
@@ -17,8 +17,4 @@
     $sql = "DELETE FROM greets WHERE id_user = $user_id AND id_greet = '$greet'";
 
     mysqli_query($link, $sql);
-
-    function deleteGreet() {
-        echo $greet;
-    }
 ?>

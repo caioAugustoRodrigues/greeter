@@ -1,19 +1,18 @@
-const btnDelete = document.getElementById('btn-delete');
+const deleteButton = document.getElementById('btn-delete');
 
+function handleDelete() {
+    const searchedGreet = $('#btn-delete').data('greet');
+    
 
-function handleGreet() {
+    $.ajax({    //jQuery here
+        url: './../../functions/delete_greet/index.php',
+        data: { greet_id: searchedGreet },
+        method: "POST",
+        type: "POST",
+        success: function(data) {
 
-    if (greetContent != '') {
-        $.ajax({    //jQuery here
-            url: './../../functions/delete-greet/index.php',
-            data: { greet_text: greetContent },
-            method: "POST",
-            type: "POST",
-            success: function(data) {
-                refreshGreets(); //in js/refresh_greets.js
-            }
-        })          // end of jQuery
-    }
+            refreshNumber(); //in js/refresh_greet_numbers
+            refreshGreets(); //in js/refresh_greets.js
+        }
+    })          // end of jQuery
 }
-
-btnDelete.addEventListener('click', handleGreet);
