@@ -5,13 +5,13 @@
         private $host = 'localhost';
 
         //usuario
-        private $user = 'id13204238_admin';
+        private $user = 'root';
 
         //senha
-        private $pass = '*kQg3[5}hjmdr1U-';
+        private $pass = '';
 
         //banco de dados
-        private $database = 'id13204238_db_greeter';
+        private $database = 'db_greeter';
 
         public function connect_mysql() {
             //cria conexão

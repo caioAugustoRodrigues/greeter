@@ -31,10 +31,10 @@
             $btn_follow = 'none';
         }
 
-        echo    '<a href="#" class="list-group-item">
-                    <strong>'
+        echo    '<div href="#" class="list-group-item">
+                    <a href="../profile/index.php?id='.$register['id'].'">'
                         .$register['user'].
-                    '</strong>
+                    '</a>
                     <small>'
                     .$register['email'].
                     (
@@ -64,7 +64,7 @@
                             <div class="clearfix"></div>'
                     )
                     .'</small>       
-                </a>';      
+                </div>';      
         }
     } else {
         echo 'Request error';

@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 
-		<title>Twitter clone</title>
+		<title>Greeter</title>
 
 		<!-- jquery - link cdn -->
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -82,8 +82,8 @@
 
 	      <!-- Main component for a primary marketing message or call to action -->
 	      <div class="jumbotron">
-	        <h1>Bem vindo ao twitter clone</h1>
-	        <p>Veja o que está acontecendo agora...</p>
+	        <h1>Welcome to Greeter!</h1>
+	        <p>Check out what's happening now</p>
 	      </div>
 
 	      <div class="clearfix"></div>

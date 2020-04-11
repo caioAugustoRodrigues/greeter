@@ -29,23 +29,22 @@
 	<body>
 
 		<!-- Static navbar -->
-	    <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top">
 	      <div class="container">
 	        <div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="#" class="logo">
-					<img class="logo__content" src="../../img/greeter.png" />
-				</a>
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <img src="imagens/icone_twitter.png" />
 	        </div>
 	        
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="../../functions/exit">Sair</a></li>
+	            <li><a href="../home/">Home</a></li>
+	            <li><a href="../../functions/exit">Exit</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -73,19 +72,24 @@
 
 	    	<div class="col-xs-6">
 	    		<div class="panel panel-default">
-					<div class="panel-body">
-						<form id="greet_input" class="input-group" method="POST">
-							<input type="text" name="greet_text" id="text_greet" placeholder="What is on your mind?" maxlength="140" class="form-control">
-							<span class="input-group-btn" >
-								<span class="btn btn-default" id="btn_greet">
-								Greet!
-								</span>
-							</span>
-						</form>
+                <div class="panel-body">
+						<h4>
+							<?= $_SESSION['user'] ?>
+						</h4>
+						<hr />
+						<div class="col-xs-6" id="qnt-greets">
+							<!--Value being passed by refresh_greet_numbers.js-->
+                            2
+						</div>
+
+						<div class="col-xs-6" id="qnt-followers">
+							<!--Value being passed by refresh_followers.js-->
+                            3
+						</div>
 					</div>
 				</div>
 
-				<div id="greets" class="list-group">
+				<div id="person-greets" class="list-group">
 				
 				</div>
 			</div>
