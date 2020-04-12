@@ -13,7 +13,7 @@
     
     //% before and after search input variable means that it will look for what was searched, and it might have any number of chars before and after the searched text.
     $sql = "SELECT u.*, f.* from users as u
-            LEFT JOIN followers as f on (f.user_id = $user_id AND u.id = f.user_to_follow)
+            LEFT JOIN followers as f on (f.user_id = 8 AND u.id = f.user_to_follow)
             WHERE u.user like '%$searched_user%'";
 
     $result_id = mysqli_query($link, $sql);
@@ -31,7 +31,6 @@
             $btn_follow = 'none';
         }
 
-       
         echo    '<div href="#" class="list-group-item">
                     <a href="../profile/index.php?id='.$register['id'].'">'
                         .$register['user'].
