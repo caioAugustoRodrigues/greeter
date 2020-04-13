@@ -24,24 +24,30 @@
     if ($result_id) {
         while ($register = mysqli_fetch_array($result_id, MYSQLI_ASSOC)) {
             if ($register['id_user'] == $user_id) {
-                echo '<a href="#" class="list-group-item">';
-                echo '<h4 class="list-group-item-heading">'.$register['user'].'<small> - You - '.$register['date'].'</small></h4>';
+                echo '<div class="list-group-item">';
+                echo '<h4 class="list-group-item-heading">'
+                        .'<a href="../profile/index.php?id='.$register['id'].'" class="user">'
+                            .$register['user'].
+                        '</a>'.'<small> - You - '.$register['date'].'</small>
+                    </h4>';
                 echo '<p class="list-group-item-text">'.$register['greet'].'</p>';
                 echo '
-                    <button 
-                        data-greet="'.$register['id_greet'].'"
-                        id="btn-delete"
-                        onclick="handleDelete()"
-                    >
-                        Delete
-                    </button>
+                        <button 
+                            data-greet="'.$register['id_greet'].'"
+                            id="btn-delete"
+                            onclick="handleDelete()"
+                        >
+                            Delete
+                        </button>
                 ';
-                echo '</a>';
+                echo '</div>';
             } else  {
-                echo '<a href="#" class="list-group-item">';
-                echo '<h4 class="list-grou-item-heading">'.$register['user'].'<small> - '.$register['date'].'</small></h4>';
-                echo '<p class="list-grou-item-text">'.$register['greet'].'</p>';
-                echo '</a>';
+                echo '<div class="list-group-item">';
+                echo '<h4 class="list-group-item-heading">'.
+                '<a href="../profile/index.php?id='.$register['id'].'">'.$register['user'].'</a>'
+                .'<small> - '.$register['date'].'</small></h4>';
+                echo '<p class="list-group-item-text">'.$register['greet'].'</p>';
+                echo '</div>';
             }
         }
 

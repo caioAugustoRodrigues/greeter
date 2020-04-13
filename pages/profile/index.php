@@ -5,10 +5,16 @@
 	
 	require_once('../../db.class.php');
 
+	require('../../functions/get_profile/index.php');
+
 	$objDb = new db();
     $link = $objDb->connect_mysql();
 
 	$user_id = $_SESSION['user_id'];
+
+	$profile = new Profile;
+
+	$userName = $profile->getName();
 ?>
 
 <!DOCTYPE HTML>
@@ -73,8 +79,10 @@
 	    	<div class="col-xs-6">
 	    		<div class="panel panel-default">
                 <div class="panel-body">
-						<h4>
-							<?= $_SESSION['user'] ?>
+						<h4 id="person-name">
+							<?php 
+								echo $userName;
+							?>
 						</h4>
 						<hr />
 						<div class="col-xs-6" id="qnt-greets">
@@ -90,7 +98,10 @@
 				</div>
 
 				<div id="person-greets" class="list-group">
-				
+					<?php 
+						 //in get_profile/index.php
+						echo $userName;
+					?>
 				</div>
 			</div>
 

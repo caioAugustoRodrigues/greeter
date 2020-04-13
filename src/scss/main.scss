@@ -12,6 +12,10 @@ html {
 }
 
 a {
-    color: $text-color;
+    color: $secondary-color;
     text-decoration: none !important;
+}
+
+.error {
+    color: #aa0000;
 }

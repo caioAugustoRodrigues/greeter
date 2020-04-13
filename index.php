@@ -15,9 +15,6 @@
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	 	<link rel="stylesheet" href="./src/css/main.css">
-		<script>
-			// código javascript						
-		</script>
 	</head>
 
 	<body>
@@ -65,7 +62,7 @@
 
 							<?php 
 								if($error == 1) {
-									echo '<p style="color: #ff0000">Usuário ou senha inválidos</p>';
+									echo '<p class="error">Usuário ou senha inválidos</p>';
 								}
 							?>
 
