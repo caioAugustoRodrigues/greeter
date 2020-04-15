@@ -15,7 +15,7 @@
     $sql.= "JOIN users AS u ON (g.id_user = u.id) ";
     $sql.= "WHERE id_user = '$user_id' ";
     $sql.= "OR id_user IN (SELECT user_to_follow FROM `followers` WHERE user_id = '$user_id')";
-    $sql.= "ORDER BY date DESC";
+    $sql.= "ORDER BY date ASC";
 
     //SELECT DATE_FORMAT(g.date, '%d %b %Y %T'), user_id AS date, g.greet, u.user FROM greets AS g JOIN users AS u ON (g.id_user = u.id) WHERE id_user = '$user_id' OR id_user IN (SELECT user_to_follow FROM `followers` WHERE user_id = '$user_id') ORDER BY date DESC
 

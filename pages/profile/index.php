@@ -11,10 +11,6 @@
     $link = $objDb->connect_mysql();
 
 	$user_id = $_SESSION['user_id'];
-
-	$profile = new Profile;
-
-	$userName = $profile->getName();
 ?>
 
 <!DOCTYPE HTML>
@@ -62,7 +58,9 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h4>
-							<?= $_SESSION['user'] ?>
+							<a href="index.php?id=<?php echo $user_id ?>">
+								<?= $_SESSION['user'] ?>
+							</a>
 						</h4>
 						<hr />
 						<div class="col-xs-6" id="qnt-greets">
@@ -81,18 +79,28 @@
                 <div class="panel-body">
 						<h4 id="person-name">
 							<?php 
-								echo $userName;
+								echo $userName; //in get_profile/index.php
 							?>
 						</h4>
 						<hr />
 						<div class="col-xs-6" id="qnt-greets">
 							<!--Value being passed by refresh_greet_numbers.js-->
-                            2
+							<h3>Greets</h3>
+							<p>
+								<?php 
+									echo $qnt_greets;
+								?>
+							</p>
 						</div>
 
 						<div class="col-xs-6" id="qnt-followers">
 							<!--Value being passed by refresh_followers.js-->
-                            3
+							<h3>Followers</h3>
+							<p>
+								<?php 
+									echo $qnt_followers;
+								?>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -100,7 +108,7 @@
 				<div id="person-greets" class="list-group">
 					<?php 
 						 //in get_profile/index.php
-						echo $userName;
+						echo $getGreet;
 					?>
 				</div>
 			</div>
