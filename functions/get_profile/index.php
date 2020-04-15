@@ -2,10 +2,7 @@
     require_once('../../db.class.php');
 
     $user_id = $_GET['id'];
-
-    if ($registerName['id_user'] = $_SESSION['user_id']) {
-        $user_id = $_SESSION['user_id'];
-    }
+    $logged_id = $_SESSION['user_id'];
 
     $objDb = new db();
     $link = $objDb->connect_mysql();
@@ -17,22 +14,28 @@
     $sql.= "OR id_user IN (SELECT user_to_follow FROM `followers` WHERE user_id = '$user_id')";
     $sql.= "ORDER BY date ASC";
 
+    $sqlName = "SELECT user FROM `users` WHERE id = $user_id";
+
     //query for greet counts
     $sqlCount = "SELECT COUNT(*) as qnt_greets FROM greets where id_user = $user_id";
 
 
     //query for followers
-    $sqlFollowers = "SELECT COUNT(*) as qnt_followers FROM followers where user_id = $user_id";
+    $sqlFollowers = "SELECT COUNT(*) as qnt_followers FROM followers where user_to_follow = $user_id";
+    $sqlFollowing = "SELECT COUNT(*) as qnt_following FROM followers where user_id = $user_id";
     
     //SELECT DATE_FORMAT(g.date, '%d %b %Y %T'), user_id AS date, g.greet, u.user FROM greets AS g JOIN users AS u ON (g.id_user = u.id) WHERE id_user = '$user_id' OR id_user IN (SELECT user_to_follow FROM `followers` WHERE user_id = '$user_id') ORDER BY date DESC
     
     $result_id = mysqli_query($link, $sql);
     $result_count = mysqli_query($link, $sqlCount);
     $result_followers = mysqli_query($link, $sqlFollowers);
+    $result_following = mysqli_query($link, $sqlFollowing);
+    $result_names = mysqli_query($link, $sqlName);
     
     $qnt_greets = 0;
     $qnt_followers = 0;
-    $userName = 'Juquinha';
+    $qnt_following = 0;
+    $userName = 0;
 
     $registerQnt = mysqli_fetch_array($result_count, MYSQLI_ASSOC);
     $qnt_greets = $registerQnt['qnt_greets'];
@@ -40,17 +43,22 @@
     $registerFollowers = mysqli_fetch_array($result_followers, MYSQLI_ASSOC);
     $qnt_followers = $registerFollowers['qnt_followers'];
 
-    $registerName = mysqli_fetch_array($result_id, MYSQLI_ASSOC);
+    $registerFollowing = mysqli_fetch_array($result_following, MYSQLI_ASSOC);
+    $qnt_following = $registerFollowing['qnt_following'];
+
+    $registerName = mysqli_fetch_array($result_names, MYSQLI_ASSOC);
     $userName = $registerName['user'];
 
     
 
-    var_dump($registerName);
+    if (!$registerName['user']) {
+        header('Location: ../home/index.php?error=3');
+    }
     
     
 
 
-    function getGreet($result_id) {
+    /*function getGreet($result_id) {
         if ($result_id) {
             while ($registerName = mysqli_fetch_array($result_id, MYSQLI_ASSOC)) {
                 if ($registerName['id_user'] == $_GET['id']) {
@@ -68,8 +76,8 @@
             echo 'Request error';
         }
     }
-
+        
     $getGreet = 'getGreet';
-    $getGreet = getGreet($result_id);
+    $getGreet = getGreet($result_id);*/
     
 ?>

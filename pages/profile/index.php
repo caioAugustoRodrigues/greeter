@@ -52,7 +52,6 @@
 	      </div>
 	    </nav>
 
-
 	    <div class="container">
 	    	<div class="col-xs-3">
 				<div class="panel panel-default">
@@ -77,11 +76,21 @@
 	    	<div class="col-xs-6">
 	    		<div class="panel panel-default">
                 <div class="panel-body">
-						<h4 id="person-name">
-							<?php 
-								echo $userName; //in get_profile/index.php
-							?>
-						</h4>
+						<div class="col-md-6">
+							<h4 id="person-name">
+								<?php 
+									echo $userName; //in get_profile/index.php
+								?>
+							</h4>
+						</div>
+						<div class="col-md-6">
+							<h3>Followers</h3>
+							<p>
+								<?php 
+									echo $qnt_followers;
+								?>
+							</p>
+						</div>
 						<hr />
 						<div class="col-xs-6" id="qnt-greets">
 							<!--Value being passed by refresh_greet_numbers.js-->
@@ -95,10 +104,10 @@
 
 						<div class="col-xs-6" id="qnt-followers">
 							<!--Value being passed by refresh_followers.js-->
-							<h3>Followers</h3>
+							<h3>Following</h3>
 							<p>
 								<?php 
-									echo $qnt_followers;
+									echo $qnt_following;
 								?>
 							</p>
 						</div>
@@ -108,7 +117,7 @@
 				<div id="person-greets" class="list-group">
 					<?php 
 						 //in get_profile/index.php
-						echo $getGreet;
+						//echo $getGreet;
 					?>
 				</div>
 			</div>

@@ -51,6 +51,13 @@
 	      </div>
 	    </nav>
 
+		<?php 
+			$error = isset($_GET['error']) ? $_GET['error'] : 0;
+		
+			if ($error == 3) {
+				echo '<p class="error">User not found.</p>';
+			}
+		?>
 
 	    <div class="container">
 	    	<div class="col-xs-3">
