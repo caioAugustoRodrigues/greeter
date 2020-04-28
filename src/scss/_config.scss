@@ -1,6 +1,12 @@
-$primary-color: #188ec7;
-$secondary-color: #32353d;
-$text-color: #f5f5fa;
+$one: #306880;
+$two: #ADE7FF;
+$three: #61D0FF;
+$four: rgb(14, 19, 20);
+$five: #4DA6CC;
+
+$primary--logo: $five;
+$secondary--logo: $five;
+
 
 $font-weight:(
     "thin": 100,
@@ -10,6 +16,14 @@ $font-weight:(
     "bold": 700,
     "bolder": 900,
 );
+
+@mixin light-theme {
+    --primary-color: #ffffff;
+    --secondary-color: #ace6f6;
+    --text--lt: #525d5f;
+    --text--dk: #0e1314;
+    --color-hover: #306880;
+}
 
 @function weight($weightname){
     @return map-get($font-weight, $weightname );

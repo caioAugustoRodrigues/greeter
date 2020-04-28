@@ -13,13 +13,14 @@
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 		<!-- bootstrap - link cdn -->
-		<link rel="stylesheet" href="./src/css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	 	<link rel="stylesheet" href="./src/css/main.css">
 	</head>
 
-	<body id="light">
+	<body>
 
 		<!-- Static navbar -->
-	   <!-- <nav class="navbar navbar-default navbar-static-top">
+	    <nav class="navbar navbar-default navbar-static-top">
 	      <div class="container">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -30,7 +31,7 @@
 	          </button>
 	          <div class="logo">
 			  	<a href="index.php">
-				  <span>G</span>reeter 
+				  <img src="img/greeter.png" class="logo__content" />  
 				</a>
 			  </div>
 	        </div>
@@ -69,23 +70,10 @@
 				  	</ul>
 	            </li>
 	          </ul>
-	        </div>
+	        </div><!--/.nav-collapse -->
 	      </div>
-		</nav>-->
-		
-	<header id="navigation">
-		<div class="logo">
-			<a href="./"><span>G</span>reeter</a>
-		</div>
+	    </nav>
 
-		<div class="menu-btn" id="menu-toggle">
-			<span class="menu-btn__burger"></span>
-		</div>
-
-		<nav class="nav">
-			
-		</nav>
-	</header>
 
 	    <div class="container">
 
@@ -101,6 +89,7 @@
 
 	    </div>
 	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script>
 		$(document).ready( function() {
 			$('#btn_login').click(function() {
@@ -124,7 +113,5 @@
 			})
 		})
 		</script>
-
-		<script src="js/menu.js"></script>
 	</body>
 </html>

@@ -53,7 +53,7 @@
 	    </nav>
 
 	    <div class="container">
-	    	<div class="col-xs-3">
+	    	<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h4>
@@ -62,18 +62,18 @@
 							</a>
 						</h4>
 						<hr />
-						<div class="col-xs-6" id="qnt-greets">
+						<div class="col-md-6" id="qnt-greets">
 							<!--Value being passed by refresh_greet_numbers.js-->
 						</div>
 
-						<div class="col-xs-6" id="qnt-followers">
+						<div class="col-md-6" id="qnt-followers">
 							<!--Value being passed by refresh_followers.js-->
 						</div>
 					</div>
 				</div>
 			</div>
 
-	    	<div class="col-xs-6">
+	    	<div class="col-md-6">
 	    		<div class="panel panel-default">
                 <div class="panel-body">
 						<div class="col-md-6">
@@ -92,7 +92,7 @@
 							</p>
 						</div>
 						<hr />
-						<div class="col-xs-6" id="qnt-greets">
+						<div class="col-md-6" id="qnt-greets">
 							<!--Value being passed by refresh_greet_numbers.js-->
 							<h3>Greets</h3>
 							<p>
@@ -102,7 +102,7 @@
 							</p>
 						</div>
 
-						<div class="col-xs-6" id="qnt-followers">
+						<div class="col-md-6" id="qnt-followers">
 							<!--Value being passed by refresh_followers.js-->
 							<h3>Following</h3>
 							<p>
@@ -122,7 +122,7 @@
 				</div>
 			</div>
 
-			<div class="col-xs-3">
+			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<h4>
