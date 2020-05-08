@@ -2,101 +2,88 @@
 	$error = isset($_GET['error']) ? $_GET['error'] : 0;
 ?>
 
-<!DOCTYPE HTML>
-<html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<title>Greeter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/main.css">
+<title>Greeter</title>
+</head>
 
-		<!-- jquery - link cdn -->
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<body id="light">
+ <!-- <header>
+    <nav class="navbar fixed-top navbar-expand-md navbar-light bg-greeter">
+        <div class="logo">
+            <a href="./"><span>G</span>reeter</a>
+        </div>
 
-		<!-- bootstrap - link cdn -->
-		<link rel="stylesheet" href="./src/css/main.css">
-	</head>
+        <button class="navbar-toggler <?= $error == 1 ? '' : 'collapsed' ?>" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="<?= $error == 1 ? 'true' : 'false' ?>" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-	<body id="light">
+        <div class="collapse navbar-collapse <?= $error == 1 ? 'show' : '' ?>" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    
+                </li>
+                <li class="nav-item dropdown <?= $error == 1 ? 'show' : '' ?>">
+                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="<?= $error == 1 ? 'true' : 'false' ?>">
+                    Enter
+                    </a>
 
-		<!-- Static navbar -->
-	   <!-- <nav class="navbar navbar-default navbar-static-top">
-	      <div class="container">
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <div class="logo">
-			  	<a href="index.php">
-				  <span>G</span>reeter 
-				</a>
-			  </div>
-	        </div>
-	        
-	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="pages/sign-up">Sign-up!</a></li>
-	            <li class="<?= $error == 1 ? 'open' : '' ?>">
-	            	<a id="entrar" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar</a>
-					<ul class="dropdown-menu" aria-labelledby="entrar">
-						<div class="col-md-12">
-				    		<p>Already have an account?</h3>
-				    		<br />
-							<form method="post" action="validate.php" id="formLogin">
-								<div class="form-group">
-									<input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="User" />
-								</div>
-								
-								<div class="form-group">
-									<input type="password" class="form-control red" id="campo_senha" name="senha" placeholder="Password" />
-								</div>
-								
-								<button type="submit" class="btn btn-primary" id="btn_login">Login</button>
+                    <div class="dropdown-menu <?= $error == 1 ? 'show' : '' ?>" aria-labelledby="navbarDropdownMenuLink">
+                        <h2>Already have an account?</h2>
 
-								<br /><br />
-								
-							</form>
+                        <form method="post" action="validate.php" id="formLogin">
+                            <input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="User" />
+                            <input type="password" class="form-control" id="campo_senha" name="senha" placeholder="Password" />
+                            <button type="submit" class="btn btn-primary" id="btn_login">Login</button>
+                        </form>
+                    <?php 
+                        if($error == 1) {
+                            echo '<p class="error">Usuário e/ou senha inválidos</p>';
+                        }
+                    ?>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </header>-->
+    <main>
+        <section class="hero">
+            <div class="hero__panel"></div>
 
-							<?php 
-								if($error == 1) {
-									echo '<p class="error">Usuário ou senha inválidos</p>';
-								}
-							?>
+            <div class="hero__inner">
+                <div class="logo">
+                    <a href="./"><span>G</span>reeter</a>
+                </div>
 
-						</form>
-				  	</ul>
-	            </li>
-	          </ul>
-	        </div>
-	      </div>
-		</nav>-->
-		
-	<header id="navigation">
-		<div class="logo">
-			<a href="./"><span>G</span>reeter</a>
-		</div>
+                <p>Check out what's happening now</p>
 
-		<div class="menu-btn" id="menu-toggle">
-			<span class="menu-btn__burger"></span>
-		</div>
+                <a class="sign-up" href="pages/sign-up">Sign-up!</a>
 
-		<nav class="nav">
-			
-		</nav>
-	</header>
+                <div class="hero__inner__login <?= $error == 1 ? 'show' : '' ?>" id="enter">
+                        <p>or</p>
+                        <h2 id="enter-toggle">Enter <span></span></h2>
+                    <form method="post" action="validate.php" id="formLogin">
+                        <input type="text" class="form-control" id="campo_usuario" name="usuario" placeholder="User" />
+                        <input type="password" class="form-control" id="campo_senha" name="senha" placeholder="Password" />
+                        <button type="submit" class="btn btn-primary" id="btn_login">Login</button>
+                        <?php 
+                            if($error == 1) {
+                                echo '<p class="error">Usuário e/ou senha inválidos</p>';
+                            }
+                        ?>
+                    </form>
 
-	    <div class="container">
-
-	      <!-- Main component for a primary marketing message or call to action -->
-	      <div class="jumbotron">
-	        <h1>Welcome to Greeter!</h1>
-	        <p>Check out what's happening now</p>
-	      </div>
-
-	      <div class="clearfix"></div>
-		</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
 	    </div>
@@ -126,5 +113,12 @@
 		</script>
 
 		<script src="js/menu.js"></script>
-	</body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/enter.js"></script>
+</body>
 </html>

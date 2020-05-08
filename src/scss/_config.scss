@@ -18,11 +18,12 @@ $font-weight:(
 );
 
 @mixin light-theme {
-    --primary-color: #ffffff;
-    --secondary-color: #ace6f6;
+    --primary--lt: #ffffff;
+    --primary--md: #73ffff;
+    --secondary-color: #44b7ff;
     --text--lt: #525d5f;
     --text--dk: #0e1314;
-    --color-hover: #306880;
+    --color-hover: #338ac1;
 }
 
 @function weight($weightname){

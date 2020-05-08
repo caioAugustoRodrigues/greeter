@@ -4,7 +4,7 @@
 
 html {
     overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     font-size: 16px;
 
     #light {
@@ -13,8 +13,8 @@ html {
 
     body {
         overflow-x: hidden;
-        background: var(--primary-color);
-        color: var(--text--lt)
+        background: var(--primary--lt);
+        color: var(--text--lt);
     }
 }
 
@@ -24,5 +24,6 @@ a {
 }
 
 .error {
+    margin: 1rem 0;
     color: #aa0000;
 }

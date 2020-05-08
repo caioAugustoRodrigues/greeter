@@ -1,0 +1,104 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__panel {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100vw;
+        height: 25vh;
+        background: var(--secondary-color);
+        min-height: 100vh;
+        clip-path: polygon(100% 68%, 0% 100%, 100% 100%);
+    }
+
+    &__inner {
+        margin-top: -15vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-flow: column;
+        padding: 1rem;
+
+        * {
+            margin: .5rem 0;
+        }
+
+        .logo {
+            margin: 1rem;   
+        }
+
+        a {
+            font-weight: weight(bold);
+        }
+        
+        &__login {
+            margin-top: - .5rem;
+            text-align: center;
+
+            h2 {
+                margin-left: 1rem;
+                font-weight: weight(bold);
+                display: inline;
+                z-index: 3;
+                @include transition-ease;
+                
+                span {
+                    &::before {
+                        content: '▼';
+                    }
+                }
+
+                &:hover {
+                    color: var(--text--dk);
+                    cursor: pointer;
+                }
+            }
+
+            form {
+                visibility: hidden;
+                opacity: 0;
+                z-index: 2;
+                @include transition-ease;
+                input {
+                    margin: 0;
+                }
+            }
+
+            &.show {
+
+                h2 {
+                    span {
+                        &::before {
+                            content: '▲';
+                        }
+                    }
+                }
+
+                form {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@include media-lg {
+    .hero {
+        display: flex;
+    
+        &__panel {
+            flex: 1;
+            position: relative;
+            clip-path: none;
+        }
+
+        &__inner {
+            flex: 1;
+        }
+    }
+}
