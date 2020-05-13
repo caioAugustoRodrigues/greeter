@@ -1,22 +1,22 @@
 .hero {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     &__panel {
         position: absolute;
         bottom: 0;
         display: block;
         width: 100vw;
-        height: 25vh;
         background: var(--secondary-color);
-        min-height: 100vh;
+        height: 100%;
         clip-path: polygon(100% 68%, 0% 100%, 100% 100%);
     }
 
     &__inner {
-        margin-top: -15vh;
+        margin-top: -25vh;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -36,8 +36,9 @@
         }
         
         &__login {
-            margin-top: - .5rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
 
             h2 {
                 margin-left: 1rem;
@@ -47,6 +48,7 @@
                 @include transition-ease;
                 
                 span {
+                    font-size: .8rem;
                     &::before {
                         content: '▼';
                     }
@@ -55,16 +57,53 @@
                 &:hover {
                     color: var(--text--dk);
                     cursor: pointer;
+                    background: none;
                 }
             }
 
             form {
                 visibility: hidden;
+                display: flex;
+                flex-direction: column;
                 opacity: 0;
                 z-index: 2;
                 @include transition-ease;
+
                 input {
-                    margin: 0;
+                    margin: .125rem 0;
+                    padding: .5rem;
+                    border-radius: 3px;
+                    outline: none;
+                    box-shadow: none;
+                    border: 1px solid var(--primary--md);
+                    background-color: none;
+
+                    &:-webkit-autofill {
+                        box-shadow: 0 0 30px white inset;
+                        -webkit-box-shadow: 0 0 0 30px white inset !important;
+                        
+                        &:active, &:focus, &:hover {
+                            box-shadow: 0 0 30px white inset;
+                            -webkit-box-shadow: 0 0 0 30px white inset !important;
+                        }
+                    }
+                }
+
+                button {
+                    background: var(--secondary-color);
+                    border: none;
+                    padding: .75rem 1.5rem;
+                    color: var(--primary--lt);
+                    border-radius: 5rem;
+                    @include transition-ease;
+
+                    &:hover, &:active, &:focus {
+                        border: none;
+                        background: var(--color-hover);
+                        outline: none !important;
+                        box-shadow: none !important;
+                        cursor: pointer;
+                    }
                 }
             }
 

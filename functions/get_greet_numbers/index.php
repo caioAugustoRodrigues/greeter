@@ -20,7 +20,7 @@
 		$register = mysqli_fetch_array($result_id, MYSQLI_ASSOC);
         $qnt_greets = $register['qnt_greets'];
         
-        echo '<h4>GREETS</h1>';
+        echo '<h4>Greets: </h4>';
         echo '<p>'.$qnt_greets.'</p>';
 	} else {
 		echo "Error on fetching user's number of greets";

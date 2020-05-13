@@ -19,7 +19,7 @@
         $register = mysqli_fetch_array($result_id, MYSQLI_ASSOC);
         $qnt_followers = $register['qnt_followers'];
 
-        echo '<h4>FOLLOWERS</h1>';
+        echo '<h4>Followers: </h4>';
         echo '<p>'.$qnt_followers.'</p>';
     } else {
         echo 'Error on fetching user id';

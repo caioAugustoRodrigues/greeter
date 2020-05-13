@@ -3,27 +3,39 @@
 @import './components';
 
 html {
-    overflow-x: hidden;
     font-family: sans-serif;
     font-size: 16px;
-
+    height: 100%;
+    
     #light {
         @include light-theme;
     }
-
+    
     body {
-        overflow-x: hidden;
+        height: 100%;
+        width: 100vw;
         background: var(--primary--lt);
         color: var(--text--lt);
+        position: fixed;
     }
 }
 
 a {
     color: var(--text--lt);
     text-decoration: none !important;
+    @include transition-ease;
+
+    &:hover {
+        color: var(--text--dk);
+    }
 }
 
 .error {
-    margin: 1rem 0;
     color: #aa0000;
+}
+
+button {
+    &:focus {
+        outline: none !important;
+    }
 }

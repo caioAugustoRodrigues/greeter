@@ -1,39 +1,29 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--light-grey);
+}
+
 .navbar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: center;
-    border-bottom: 1px solid var(--primary--md);
 
     &-collapse {
         margin: 0 -1rem;
         @include transition-ease;
-        
-    
-        .navbar-nav {          
-            .dropdown {
-                margin: 0 -1rem;
-                margin-bottom: 1rem;
-                
-                .dropdown-menu {
-                    text-align: center;
-                    padding: 1rem;
-                    
-                    form {
-                        .form-control {
-                            width: 100%;
-                            margin: .5rem 0;
-                        }
-                    }
-                }
-            }
+
+        .navbar-nav { 
+            text-align: center;
+            display: flex;
             
             .nav-item {
-                display: inline-block;
+                flex: 1 1 100%;
+                display: flex;
+                justify-content: center;
                 font-weight: weight(bold);
                 font-size: 1.2rem;
                 
                 .nav-link {
+                    text-align: center;
                     @include transition-ease;
                 }
             }
@@ -49,27 +39,45 @@
     .navbar {
         display: flex;
         align-items: center;
-        padding: .3rem 5rem;
+        padding: 1rem 5rem;
+        
+        .logo {
+            flex: 5;
+        }
+
         &-collapse {
+            margin: none;
+            flex: 1;
+
             .navbar-nav {
+                margin-right: .5rem;
                 margin-left: auto;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
                 align-items: center;
+                justify-content: flex-end;
 
                 .nav-item {
                     display: flex;
                     justify-content: flex-end;
-                    flex: 1;
-                    min-width: 100px;
+
+                    .nav-link {
+                        font-size: 1rem;
+                    }
                 }
 
-                .dropdown {
-                    margin: 0;
+                .search {
+                    display: none;
                 }
             }
         }
     }
 }
 
+@include media-lg {
+    .navbar {
+        padding: 1.5rem 10rem;
+
+        &-collapse {
+            align-self: flex-start;
+        }
+    }
+}

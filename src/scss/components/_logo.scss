@@ -1,16 +1,23 @@
 .logo {
-    padding: 0.5rem;
     font-size: 2rem;
     font-weight: weight(bold);
     margin-bottom: .5rem;
     
     a {
         color: var(--text--dk);
-        border-bottom: .2rem solid var(--secondary-color);
         @include transition-ease; 
 
         span {
             color: var(--secondary-color);
+            border-bottom: .2rem solid var(--secondary-color);
+        }
+
+        &:hover {
+            border-bottom: .2rem solid var(--secondary-color);
+
+            span {
+                border: none;
+            }
         }
     }
 }
